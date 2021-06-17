@@ -21,7 +21,7 @@ function ImageFrame() {
 	const moves = ["<", ">", "^", "v"];
 	const [moveID, setMoveID] = useState(0);
 
-	const moveTypes = ["H", "F", "U"];
+	const moveTypes = ["H", "F", "W", "L"];
 	const [moveTypeID, setMoveTypeID] = useState(0);
 
 	useEffect(() => {
@@ -40,6 +40,7 @@ function ImageFrame() {
 				ref={ticksInput}
 				min="1"
 				max="10"
+				value={ticks / 1000}
 				onChange={() => handleChange()}
 			/>
 
