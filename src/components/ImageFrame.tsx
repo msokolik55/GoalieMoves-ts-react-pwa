@@ -1,4 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
+import {
+	North,
+	South,
+	East,
+	West,
+	NorthEast,
+	NorthWest,
+	SouthEast,
+	SouthWest
+} from "@material-ui/icons";
 
 // enum directions {
 // 	left,
@@ -18,10 +28,19 @@ function ImageFrame() {
 		}
 	};
 
-	const moves = ["<", ">", "^", "v"];
+	const moves = [
+		<North />,
+		<South />,
+		<East />,
+		<West />,
+		<NorthEast />,
+		<NorthWest />,
+		<SouthEast />,
+		<SouthWest />
+	];
 	const [moveID, setMoveID] = useState(0);
 
-	const moveTypes = ["H", "F", "W", "L"];
+	const moveTypes = ["H", "F", "V", "L"];
 	const [moveTypeID, setMoveTypeID] = useState(0);
 
 	useEffect(() => {
@@ -44,15 +63,13 @@ function ImageFrame() {
 				onChange={() => handleChange()}
 			/>
 
-			<div
-				style={{
-					fontSize: "15em",
-					display: "flex",
-					width: "100%",
-					flexDirection: "column"
-				}}>
-				<div style={{ height: "1em" }}>{moveTypes[moveTypeID]}</div>
-				<div>{moves[moveID]}</div>
+			<div className="flex-container">
+				<div className="flex-child">
+					<div className="flex-child-type">{moveTypes[moveTypeID]}</div>
+				</div>
+				<div className="flex-child">
+					<div className="flex-child-direction">{moves[moveID]}</div>
+				</div>
 
 				{/* <div
 					style={{
