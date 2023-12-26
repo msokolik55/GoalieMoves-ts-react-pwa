@@ -1,31 +1,35 @@
-:root {
-	--main-scale: 8;
+#root {
+  --main-scale: 10em;
+
+  margin: 0 auto;
+  text-align: center;
 }
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+
 .flex-container {
-	width: 100%;
-	height: 85vh;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-child {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-child-type {
-	transform: scale(calc(var(--main-scale) * 1.5));
+  font-size: var(--main-scale);
 }
 
 .flex-child-direction {
-	transform: scale(var(--main-scale));
+  font-size: var(--main-scale);
 }
